@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
   "assistant": {
     "default_model": {
       "provider": "ollama",
@@ -14,29 +18,24 @@
     },
     "version": "2"
   },
-  "telemetry": {
-    "metrics": false,
-    "diagnostics": false
+  "features": {
+    "copilot": true
   },
+  "show_copilot_suggestions": true,
   "vim_mode": false,
   "ui_font_size": 16,
   "buffer_font_size": 16,
+  "hard_tabs": true,
   "tab_size": 2,
   "cursor_blink": true,
-  "preferred_line_length": 80,
-  "buffer_line_height": "comfortable",
-  "formatter": "prettier",
-  "autosave_delay": 1500,
-  "autosave_on_focus_change": true,
-  "autosave_on_window_change": true,
-  "autosave_on_build": true,
-  "autosave_on_build_delay": 1500,
-  "autosave_on_build_events": ["build", "run", "debug"],
-  "autosave_on_build_events_delay": 1500,
-  "confirm_quit": false,
+  "preferred_line_length": 200,
+  "format_on_save": "on",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
   "hover_popover_enabled": true,
-  "show_copilot_suggestions": true,
-  "features": {"copilot": true},
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -55,27 +54,6 @@
     "autoFetchOnBuildDelay": 1500,
     "git_gutter": "tracked_files"
   },
-  "prettier": {
-    "printWidth": 80,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "arrowParens": "avoid",
-    "proseWrap": "preserve",
-    "endOfLine": "lf"
-  },
-  "linter": "eslint",
-  "bracket_pairing": "always",
-  "eslint": {
-    "enabled": true,
-    "autoFixOnSave": true,
-    "autoFixOnFormat": true,
-    "autoFixOnFormatDelay": 1500
-  },
   "languages": {
     "JavaScript": {
       "code_actions_on_format": {
@@ -88,15 +66,20 @@
         "source.fixAll.eslint": true
       }
     },
-    "TSX": {
-      "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll.eslint": true
-      }
+    "PHP": {
+      "language_servers": ["intelephense", "!phpactor", "..."]
     },
     "Python": {
-      "format_on_save": { "language_server": { "name": "ruff" } },
-      "formatter": { "language_server": { "name": "ruff" } },
+      "format_on_save": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
       "language_servers": ["pyright", "ruff"]
     }
   },
