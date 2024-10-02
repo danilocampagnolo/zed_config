@@ -28,7 +28,7 @@
   "hard_tabs": true,
   "tab_size": 4,
   "cursor_blink": true,
-  "preferred_line_length": 200,
+  "preferred_line_length": 100,
   "format_on_save": "on",
   "autosave": {
     "after_delay": {
